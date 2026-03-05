@@ -2,6 +2,9 @@
 .github
 .distignore
 .gitkeep
+build
 dev-notes
 phpcs.xml
 CLAUDE.md
+README.md
+CHANGELOG.md
