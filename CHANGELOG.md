@@ -2,6 +2,13 @@
 
 All notable changes to Auto Image Link Maker will be documented in this file.
 
+## [1.0.1] - 2026-03-05
+
+### Changed
+
+- Updated plugin header with author name (Paul Faulkner), author URI, plugin URI, and license URI.
+- Added screenshot to README.md showing the settings page.
+
 ## [1.0.0] - 2026-03-05
 
 ### Added

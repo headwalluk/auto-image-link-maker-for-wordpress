@@ -1,6 +1,6 @@
 # Auto Image Link Maker
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.1-blue)
 ![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759b?logo=wordpress)
 ![PHP](https://img.shields.io/badge/PHP-8.0%2B-777bb4?logo=php&logoColor=white)
 ![License](https://img.shields.io/badge/license-GPLv2-green)
@@ -26,6 +26,8 @@ The plugin uses a client-side JavaScript approach rather than server-side HTML p
 - **Reliable parent detection** — `element.closest('a')` is a clean, native way to check ancestry. The server-side equivalent (`WP_HTML_Tag_Processor`) is a forward-only stream parser that cannot easily inspect parent elements.
 - **Works with the real DOM** — no need to handle HTML serialization edge cases.
 - **Non-destructive** — the stored content is never modified; links are added at render time in the browser.
+
+![Auto Image Link Maker settings page](docs/auto-lightbox-plugin-wordpress-settings.webp)
 
 ## Third-Party Libraries
 
