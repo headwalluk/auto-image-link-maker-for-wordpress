@@ -4,7 +4,7 @@ Tags: images, lightbox, links, tables, accessibility
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 0.6.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,11 @@ No. The plugin works entirely in the browser. Your saved content is never change
 The plugin bundles GLightbox 3.3.1 (MIT licence), a lightweight, dependency-free lightbox library.
 
 == Changelog ==
+
+= 1.0.0 =
+* First stable release.
+* Add GitHub Actions release workflow for automated zip builds.
+* Update POT file with all translatable strings.
 
 = 0.6.0 =
 * Add gallery grouping: images in the same container (e.g. table, gallery block) form a swipeable lightbox gallery.

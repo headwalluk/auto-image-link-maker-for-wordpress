@@ -1,8 +1,5 @@
-# Copyright (C) 2026 headwalluk
-# This file is distributed under the same license as the Auto Image Link Maker plugin.
 msgid ""
 msgstr ""
-"Language: pl_PL\n"
 "Project-Id-Version: Auto Image Link Maker 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-link-maker\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -12,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-03-05T09:41:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: pl_PL\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: auto-image-link-maker\n"
 
@@ -43,22 +41,114 @@ msgstr "Selektory CSS"
 msgid "Image Selectors"
 msgstr "Selektory obrazów"
 
-#: includes/class-settings.php:107
+#: includes/class-settings.php:247
 msgid "Page Types"
 msgstr "Typy stron"
 
-#: includes/class-settings.php:114
+#: includes/class-settings.php:254
 msgid "Enable on"
 msgstr "Włącz"
 
-#: includes/class-settings.php:142
+#: includes/class-settings.php:282
 msgid "Enter CSS selectors to identify images that should be made clickable. One selector per line."
 msgstr "Wprowadź selektory CSS, aby zidentyfikować obrazy, które powinny być klikalne. Jeden selektor w każdym wierszu."
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:301
 msgid "Example: #main img, .entry-content img, .wp-block-table img"
 msgstr "Przykład: #main img, .entry-content img, .wp-block-table img"
 
-#: includes/class-settings.php:175
+#: includes/class-settings.php:527
 msgid "Choose which types of pages the plugin should run on."
 msgstr "Wybierz typy stron, na których ma działać wtyczka."
+
+#: includes/class-plugin.php:53
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: includes/class-settings.php:117
+msgid "Exclude Selectors"
+msgstr "Wyklucz selektory"
+
+#: includes/class-settings.php:135
+msgid "Hijack Image Links"
+msgstr "Przejęcie linków do obrazów"
+
+#: includes/class-settings.php:193
+msgid "Gallery Grouping"
+msgstr "Grupa galerii"
+
+#: includes/class-settings.php:200
+msgid "Enable Grouping"
+msgstr "Włącz grupowanie"
+
+#: includes/class-settings.php:208
+msgid "Gallery Containers"
+msgstr "Galeria Kontenery"
+
+#: includes/class-settings.php:216
+msgid "Group Loose Images"
+msgstr "Grupa Luźne obrazy"
+
+#: includes/class-settings.php:224
+msgid "Emoji Exclusions"
+msgstr "Wyłączenia emoji"
+
+#: includes/class-settings.php:231
+msgid "Skip Emoji Images"
+msgstr "Pomiń obrazy emoji"
+
+#: includes/class-settings.php:239
+msgid "Emoji Selectors"
+msgstr "Selektory emoji"
+
+#: includes/class-settings.php:320
+msgid "Images matching these selectors will be skipped. One selector per line. Example: .site-logo img, .avatar"
+msgstr "Obrazy pasujące do tych selektorów zostaną pominięte. Jeden selektor w każdym wierszu. Przykład: .site-logo img, .avatar"
+
+#: includes/class-settings.php:341
+msgid "Open existing image links in the lightbox"
+msgstr "Otwórz istniejące linki do obrazów w lightboxie"
+
+#: includes/class-settings.php:342
+msgid "When enabled, images that already link to an image file will open in the lightbox instead of navigating to the file. Links to non-image content (e.g. posts) are not affected."
+msgstr "Po włączeniu tej opcji obrazy, które już zawierają link do pliku graficznego, będą otwierane w lightboxie zamiast przekierowywać do pliku. Nie ma to wpływu na linki do treści innych niż obrazy (np. posty)."
+
+#: includes/class-settings.php:369
+msgid "Group lightbox images by their container so that clicking an image in a table lets you swipe through that table's images only."
+msgstr "Grupuj obrazy w lightboxie według ich kontenera, tak aby kliknięcie obrazu w tabeli umożliwiało przeglądanie tylko obrazów z tej tabeli."
+
+#: includes/class-settings.php:390
+msgid "Group images into separate galleries by container"
+msgstr "Grupuj zdjęcia w oddzielnych galeriach według kontenera"
+
+#: includes/class-settings.php:391
+msgid "When disabled, all images on the page share a single lightbox. When enabled, images are grouped by their nearest gallery container."
+msgstr "Gdy opcja jest wyłączona, wszystkie obrazy na stronie mają jedną wspólną galerię. Gdy opcja jest włączona, obrazy są grupowane według najbliższego kontenera galerii."
+
+#: includes/class-settings.php:410
+msgid "CSS selectors for elements that define gallery boundaries. One selector per line. Images inside the same container form a swipeable gallery."
+msgstr "Selektory CSS dla elementów definiujących granice galerii. Jeden selektor w każdym wierszu. Obrazy znajdujące się w tym samym kontenerze tworzą galerię, którą można przeglądać za pomocą gestów."
+
+#: includes/class-settings.php:431
+msgid "Group loose images together"
+msgstr "Grupuj luźne obrazy"
+
+#: includes/class-settings.php:432
+msgid "When enabled, images that are not inside any gallery container are grouped into a shared lightbox. When disabled, each loose image opens individually."
+msgstr "Po włączeniu tej opcji obrazy, które nie znajdują się w żadnym kontenerze galerii, są grupowane we wspólnym oknie podglądu. Po wyłączeniu tej opcji każdy pojedynczy obraz otwiera się osobno."
+
+#: includes/class-settings.php:459
+msgid "Some browsers replace Unicode emoji with image elements. Use these settings to prevent emoji images from being treated as content images."
+msgstr "Niektóre przeglądarki zastępują emoji Unicode elementami graficznymi. Użyj tych ustawień, aby zapobiec traktowaniu obrazów emoji jako obrazów treści."
+
+#: includes/class-settings.php:480
+msgid "Exclude emoji images from processing"
+msgstr "Wyklucz obrazy emoji z przetwarzania"
+
+#: includes/class-settings.php:481
+msgid "When enabled, images matching the emoji selectors below will be skipped."
+msgstr "Po włączeniu tej opcji obrazy pasujące do poniższych selektorów emoji zostaną pominięte."
+
+#: includes/class-settings.php:500
+msgid "CSS selectors that identify emoji images. One selector per line. WordPress uses img.wp-smiley and img.emoji by default."
+msgstr "Selektory CSS identyfikujące obrazy emoji. Jeden selektor w każdym wierszu. WordPress domyślnie używa img.wp-smiley i img.emoji."

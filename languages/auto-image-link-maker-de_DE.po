@@ -1,8 +1,5 @@
-# Copyright (C) 2026 headwalluk
-# This file is distributed under the same license as the Auto Image Link Maker plugin.
 msgid ""
 msgstr ""
-"Language: de_DE\n"
 "Project-Id-Version: Auto Image Link Maker 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-link-maker\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -12,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-03-05T09:41:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: de_DE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: auto-image-link-maker\n"
 
@@ -43,22 +41,114 @@ msgstr "CSS-Selektoren"
 msgid "Image Selectors"
 msgstr "Bildauswahl"
 
-#: includes/class-settings.php:107
+#: includes/class-settings.php:247
 msgid "Page Types"
 msgstr "Seitentypen"
 
-#: includes/class-settings.php:114
+#: includes/class-settings.php:254
 msgid "Enable on"
 msgstr "Aktivieren"
 
-#: includes/class-settings.php:142
+#: includes/class-settings.php:282
 msgid "Enter CSS selectors to identify images that should be made clickable. One selector per line."
 msgstr "Geben Sie CSS-Selektoren ein, um Bilder zu identifizieren, die anklickbar gemacht werden sollen. Ein Selektor pro Zeile."
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:301
 msgid "Example: #main img, .entry-content img, .wp-block-table img"
 msgstr "Beispiel: #main img, .entry-content img, .wp-block-table img"
 
-#: includes/class-settings.php:175
+#: includes/class-settings.php:527
 msgid "Choose which types of pages the plugin should run on."
 msgstr "Wählen Sie aus, auf welchen Seitentypen das Plugin ausgeführt werden soll."
+
+#: includes/class-plugin.php:53
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: includes/class-settings.php:117
+msgid "Exclude Selectors"
+msgstr "Selektoren ausschließen"
+
+#: includes/class-settings.php:135
+msgid "Hijack Image Links"
+msgstr "Bildlinks hijacken"
+
+#: includes/class-settings.php:193
+msgid "Gallery Grouping"
+msgstr "Galerie-Gruppierung"
+
+#: includes/class-settings.php:200
+msgid "Enable Grouping"
+msgstr "Gruppierung aktivieren"
+
+#: includes/class-settings.php:208
+msgid "Gallery Containers"
+msgstr "Galerie-Container"
+
+#: includes/class-settings.php:216
+msgid "Group Loose Images"
+msgstr "Gruppe Lose Bilder"
+
+#: includes/class-settings.php:224
+msgid "Emoji Exclusions"
+msgstr "Emoji-Ausschlüsse"
+
+#: includes/class-settings.php:231
+msgid "Skip Emoji Images"
+msgstr "Emoji-Bilder überspringen"
+
+#: includes/class-settings.php:239
+msgid "Emoji Selectors"
+msgstr "Emoji-Auswahl"
+
+#: includes/class-settings.php:320
+msgid "Images matching these selectors will be skipped. One selector per line. Example: .site-logo img, .avatar"
+msgstr "Bilder, die diesen Selektoren entsprechen, werden übersprungen. Ein Selektor pro Zeile. Beispiel: .site-logo img, .avatar"
+
+#: includes/class-settings.php:341
+msgid "Open existing image links in the lightbox"
+msgstr "Öffne vorhandene Bildlinks im Leuchtkasten"
+
+#: includes/class-settings.php:342
+msgid "When enabled, images that already link to an image file will open in the lightbox instead of navigating to the file. Links to non-image content (e.g. posts) are not affected."
+msgstr "Wenn diese Option aktiviert ist, werden Bilder, die bereits mit einer Bilddatei verknüpft sind, im Lightbox-Fenster geöffnet, anstatt zur Datei zu navigieren. Links zu Nicht-Bild-Inhalten (z. B. Beiträgen) sind davon nicht betroffen."
+
+#: includes/class-settings.php:369
+msgid "Group lightbox images by their container so that clicking an image in a table lets you swipe through that table's images only."
+msgstr "Gruppieren Sie Lightbox-Bilder nach ihrem Container, sodass Sie durch Klicken auf ein Bild in einer Tabelle nur durch die Bilder dieser Tabelle blättern können."
+
+#: includes/class-settings.php:390
+msgid "Group images into separate galleries by container"
+msgstr "Gruppenbilder in separate Galerien nach Container gruppieren"
+
+#: includes/class-settings.php:391
+msgid "When disabled, all images on the page share a single lightbox. When enabled, images are grouped by their nearest gallery container."
+msgstr "Wenn diese Option deaktiviert ist, teilen sich alle Bilder auf der Seite eine einzige Lightbox. Wenn sie aktiviert ist, werden die Bilder nach ihrem nächstgelegenen Galeriecontainer gruppiert."
+
+#: includes/class-settings.php:410
+msgid "CSS selectors for elements that define gallery boundaries. One selector per line. Images inside the same container form a swipeable gallery."
+msgstr "CSS-Selektoren für Elemente, die die Grenzen der Galerie definieren. Ein Selektor pro Zeile. Bilder innerhalb desselben Containers bilden eine wischbare Galerie."
+
+#: includes/class-settings.php:431
+msgid "Group loose images together"
+msgstr "Lose Bilder gruppieren"
+
+#: includes/class-settings.php:432
+msgid "When enabled, images that are not inside any gallery container are grouped into a shared lightbox. When disabled, each loose image opens individually."
+msgstr "Wenn diese Option aktiviert ist, werden Bilder, die sich nicht in einem Galerie-Container befinden, in einer gemeinsamen Lightbox gruppiert. Wenn diese Option deaktiviert ist, wird jedes einzelne Bild separat geöffnet."
+
+#: includes/class-settings.php:459
+msgid "Some browsers replace Unicode emoji with image elements. Use these settings to prevent emoji images from being treated as content images."
+msgstr "Einige Browser ersetzen Unicode-Emojis durch Bildelemente. Verwenden Sie diese Einstellungen, um zu verhindern, dass Emoji-Bilder als Inhaltsbilder behandelt werden."
+
+#: includes/class-settings.php:480
+msgid "Exclude emoji images from processing"
+msgstr "Emoji-Bilder von der Verarbeitung ausschließen"
+
+#: includes/class-settings.php:481
+msgid "When enabled, images matching the emoji selectors below will be skipped."
+msgstr "Wenn diese Option aktiviert ist, werden Bilder, die den unten aufgeführten Emoji-Selektoren entsprechen, übersprungen."
+
+#: includes/class-settings.php:500
+msgid "CSS selectors that identify emoji images. One selector per line. WordPress uses img.wp-smiley and img.emoji by default."
+msgstr "CSS-Selektoren, die Emoji-Bilder identifizieren. Ein Selektor pro Zeile. WordPress verwendet standardmäßig img.wp-smiley und img.emoji."

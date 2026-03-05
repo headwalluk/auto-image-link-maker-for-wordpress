@@ -2,6 +2,14 @@
 
 All notable changes to Auto Image Link Maker will be documented in this file.
 
+## [1.0.0] - 2026-03-05
+
+### Added
+
+- First stable release.
+- GitHub Actions release workflow: automatically builds and publishes zip files when a version tag is pushed.
+- Updated POT file with all translatable strings from v0.6.0.
+
 ## [0.6.0] - 2026-03-05
 
 ### Added

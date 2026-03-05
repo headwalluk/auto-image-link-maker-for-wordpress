@@ -1,8 +1,5 @@
-# Copyright (C) 2026 headwalluk
-# This file is distributed under the same license as the Auto Image Link Maker plugin.
 msgid ""
 msgstr ""
-"Language: fr_FR\n"
 "Project-Id-Version: Auto Image Link Maker 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-link-maker\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -12,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-03-05T09:41:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: fr_FR\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: auto-image-link-maker\n"
 
@@ -43,22 +41,114 @@ msgstr "Sélecteurs CSS"
 msgid "Image Selectors"
 msgstr "Sélecteurs d'images"
 
-#: includes/class-settings.php:107
+#: includes/class-settings.php:247
 msgid "Page Types"
 msgstr "Page Types"
 
-#: includes/class-settings.php:114
+#: includes/class-settings.php:254
 msgid "Enable on"
 msgstr "Activer"
 
-#: includes/class-settings.php:142
+#: includes/class-settings.php:282
 msgid "Enter CSS selectors to identify images that should be made clickable. One selector per line."
 msgstr "Entrez les sélecteurs CSS pour identifier les images qui doivent être cliquables. Un sélecteur par ligne."
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:301
 msgid "Example: #main img, .entry-content img, .wp-block-table img"
 msgstr "Exemple : #main img, .entry-content img, .wp-block-table img"
 
-#: includes/class-settings.php:175
+#: includes/class-settings.php:527
 msgid "Choose which types of pages the plugin should run on."
 msgstr "Choisissez les types de pages sur lesquels le plugin doit s'exécuter."
+
+#: includes/class-plugin.php:53
+msgid "Settings"
+msgstr "Paramètres"
+
+#: includes/class-settings.php:117
+msgid "Exclude Selectors"
+msgstr "Exclure les sélecteurs"
+
+#: includes/class-settings.php:135
+msgid "Hijack Image Links"
+msgstr "Détourner les liens vers les images"
+
+#: includes/class-settings.php:193
+msgid "Gallery Grouping"
+msgstr "Regroupement de galeries"
+
+#: includes/class-settings.php:200
+msgid "Enable Grouping"
+msgstr "Activer le regroupement"
+
+#: includes/class-settings.php:208
+msgid "Gallery Containers"
+msgstr "Conteneurs-galeries"
+
+#: includes/class-settings.php:216
+msgid "Group Loose Images"
+msgstr "Groupe Images libres"
+
+#: includes/class-settings.php:224
+msgid "Emoji Exclusions"
+msgstr "Exclusions d'émoticônes"
+
+#: includes/class-settings.php:231
+msgid "Skip Emoji Images"
+msgstr "Ignorer les images Emoji"
+
+#: includes/class-settings.php:239
+msgid "Emoji Selectors"
+msgstr "Sélecteurs d'émoticônes"
+
+#: includes/class-settings.php:320
+msgid "Images matching these selectors will be skipped. One selector per line. Example: .site-logo img, .avatar"
+msgstr "Les images correspondant à ces sélecteurs seront ignorées. Un sélecteur par ligne. Exemple : .site-logo img, .avatar"
+
+#: includes/class-settings.php:341
+msgid "Open existing image links in the lightbox"
+msgstr "Ouvrir les liens d'images existants dans la visionneuse"
+
+#: includes/class-settings.php:342
+msgid "When enabled, images that already link to an image file will open in the lightbox instead of navigating to the file. Links to non-image content (e.g. posts) are not affected."
+msgstr "Lorsque cette option est activée, les images qui renvoient déjà vers un fichier image s'ouvriront dans la visionneuse plutôt que d'afficher le fichier. Les liens vers des contenus autres que des images (par exemple, des publications) ne sont pas affectés."
+
+#: includes/class-settings.php:369
+msgid "Group lightbox images by their container so that clicking an image in a table lets you swipe through that table's images only."
+msgstr "Regroupez les images de la visionneuse par conteneur afin que, lorsque vous cliquez sur une image dans un tableau, vous puissiez faire défiler uniquement les images de ce tableau."
+
+#: includes/class-settings.php:390
+msgid "Group images into separate galleries by container"
+msgstr "Regrouper les images dans des galeries distinctes par conteneur"
+
+#: includes/class-settings.php:391
+msgid "When disabled, all images on the page share a single lightbox. When enabled, images are grouped by their nearest gallery container."
+msgstr "Lorsque cette option est désactivée, toutes les images de la page partagent une seule visionneuse. Lorsqu'elle est activée, les images sont regroupées par leur conteneur de galerie le plus proche."
+
+#: includes/class-settings.php:410
+msgid "CSS selectors for elements that define gallery boundaries. One selector per line. Images inside the same container form a swipeable gallery."
+msgstr "Sélecteurs CSS pour les éléments qui définissent les limites de la galerie. Un sélecteur par ligne. Les images contenues dans le même conteneur forment une galerie que l'on peut faire défiler."
+
+#: includes/class-settings.php:431
+msgid "Group loose images together"
+msgstr "Regrouper les images éparses"
+
+#: includes/class-settings.php:432
+msgid "When enabled, images that are not inside any gallery container are grouped into a shared lightbox. When disabled, each loose image opens individually."
+msgstr "Lorsque cette option est activée, les images qui ne se trouvent dans aucun conteneur de galerie sont regroupées dans une visionneuse partagée. Lorsqu'elle est désactivée, chaque image isolée s'ouvre individuellement."
+
+#: includes/class-settings.php:459
+msgid "Some browsers replace Unicode emoji with image elements. Use these settings to prevent emoji images from being treated as content images."
+msgstr "Certains navigateurs remplacent les emojis Unicode par des éléments d'image. Utilisez ces paramètres pour éviter que les images emoji ne soient traitées comme des images de contenu."
+
+#: includes/class-settings.php:480
+msgid "Exclude emoji images from processing"
+msgstr "Exclure les images emoji du traitement"
+
+#: includes/class-settings.php:481
+msgid "When enabled, images matching the emoji selectors below will be skipped."
+msgstr "Lorsque cette option est activée, les images correspondant aux sélecteurs d'émoticônes ci-dessous seront ignorées."
+
+#: includes/class-settings.php:500
+msgid "CSS selectors that identify emoji images. One selector per line. WordPress uses img.wp-smiley and img.emoji by default."
+msgstr "Sélecteurs CSS qui identifient les images emoji. Un sélecteur par ligne. WordPress utilise img.wp-smiley et img.emoji par défaut."
