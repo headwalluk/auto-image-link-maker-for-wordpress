@@ -4,7 +4,7 @@ Tags: images, lightbox, links, tables, accessibility
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 0.5.0
+Stable tag: 0.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,12 @@ No. The plugin works entirely in the browser. Your saved content is never change
 The plugin bundles GLightbox 3.3.1 (MIT licence), a lightweight, dependency-free lightbox library.
 
 == Changelog ==
+
+= 0.6.0 =
+* Add gallery grouping: images in the same container (e.g. table, gallery block) form a swipeable lightbox gallery.
+* New settings: Enable Grouping, Gallery Containers, Group Loose Images.
+* Add developer filters (apply_filters) for per-page overrides: ailm_should_enqueue, ailm_css_selectors, ailm_exclude_selectors, ailm_hijack_image_links, ailm_skip_emoji, ailm_emoji_selectors, ailm_gallery_grouping, ailm_gallery_containers, ailm_group_ungrouped, ailm_script_data.
+* Add Developer Filters documentation to README.md.
 
 = 0.5.0 =
 * Add Settings link on the Plugins page for quick access.

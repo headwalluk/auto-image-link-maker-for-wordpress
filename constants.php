@@ -16,6 +16,9 @@ const OPT_HIJACK_IMAGE_LINKS = 'ailm_hijack_image_links';
 const OPT_EXCLUDE_SELECTORS  = 'ailm_exclude_selectors';
 const OPT_SKIP_EMOJI         = 'ailm_skip_emoji';
 const OPT_EMOJI_SELECTORS    = 'ailm_emoji_selectors';
+const OPT_GALLERY_GROUPING   = 'ailm_gallery_grouping';
+const OPT_GALLERY_CONTAINERS = 'ailm_gallery_containers';
+const OPT_GROUP_UNGROUPED    = 'ailm_group_ungrouped';
 
 // Default values.
 const DEF_CSS_SELECTORS      = "#main img\n.entry-content img";
@@ -23,6 +26,9 @@ const DEF_HIJACK_IMAGE_LINKS = true;
 const DEF_EXCLUDE_SELECTORS  = ".site-logo img\n.custom-logo\n.avatar";
 const DEF_SKIP_EMOJI         = true;
 const DEF_EMOJI_SELECTORS    = "img.wp-smiley\nimg.emoji";
+const DEF_GALLERY_GROUPING   = false;
+const DEF_GALLERY_CONTAINERS = "table\n.wp-block-gallery";
+const DEF_GROUP_UNGROUPED    = true;
 
 const DEF_PAGE_TYPES = array(
 	'is_single'     => true,

@@ -110,7 +110,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		return img.matches( emojiSelector );
 	}
 
-	var images = document.querySelectorAll( selector );
+	var images         = document.querySelectorAll( selector );
+	var processedAnchors = [];
 
 	images.forEach( function( img ) {
 		if ( isExcluded( img ) || isEmoji( img ) ) {
@@ -125,6 +126,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 				existingAnchor.setAttribute( 'href', getFullSizeUrl( img ) );
 				existingAnchor.classList.add( 'glightbox' );
 				existingAnchor.classList.add( 'ailm-hijacked' );
+				processedAnchors.push( existingAnchor );
 			}
 			return;
 		}
@@ -141,7 +143,41 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		anchor.classList.add( 'ailm-link' );
 		img.parentNode.insertBefore( anchor, img );
 		anchor.appendChild( img );
+		processedAnchors.push( anchor );
 	} );
+
+	// Gallery grouping: assign data-gallery attributes to group images by container.
+	if ( ailmData.galleryGrouping && ailmData.galleryContainers && ailmData.galleryContainers.length ) {
+		var containerIndex = 0;
+		var containerMap   = new Map();
+
+		processedAnchors.forEach( function( anchor ) {
+			var img       = anchor.querySelector( 'img' ) || anchor;
+			var container = null;
+			var i;
+
+			for ( i = 0; i < ailmData.galleryContainers.length; i++ ) {
+				var match = img.closest( ailmData.galleryContainers[i] );
+				if ( match ) {
+					container = match;
+					break;
+				}
+			}
+
+			if ( container ) {
+				if ( ! containerMap.has( container ) ) {
+					containerIndex++;
+					containerMap.set( container, 'ailm-gallery-' + containerIndex );
+				}
+				anchor.setAttribute( 'data-gallery', containerMap.get( container ) );
+			} else if ( ailmData.groupUngrouped ) {
+				anchor.setAttribute( 'data-gallery', 'ailm-ungrouped' );
+			} else {
+				containerIndex++;
+				anchor.setAttribute( 'data-gallery', 'ailm-solo-' + containerIndex );
+			}
+		} );
+	}
 
 	if ( typeof GLightbox !== 'undefined' ) {
 		GLightbox( {

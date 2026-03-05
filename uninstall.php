@@ -13,3 +13,6 @@ delete_option( 'ailm_hijack_image_links' );
 delete_option( 'ailm_skip_emoji' );
 delete_option( 'ailm_emoji_selectors' );
 delete_option( 'ailm_exclude_selectors' );
+delete_option( 'ailm_gallery_grouping' );
+delete_option( 'ailm_gallery_containers' );
+delete_option( 'ailm_group_ungrouped' );

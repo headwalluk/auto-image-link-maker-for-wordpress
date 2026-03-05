@@ -1,6 +1,6 @@
 # Project Tracker
 
-**Version:** 0.5.0
+**Version:** 0.6.0
 **Last Updated:** 5 March 2026
 **Current Phase:** Complete
 **Overall Progress:** 100%
@@ -90,12 +90,24 @@ None — testing on client site.
 - [x] Exclude selectors: textarea for images to skip (e.g. .site-logo img, .avatar)
 - [x] JS: isExcluded() check before processing each image
 
-### Milestone 9: Gallery Mode (FUTURE — may or may not implement)
+### Milestone 9: Gallery Mode (DONE)
 
-- [ ] Group lightbox images per container (e.g. per table) for swipe navigation
-- [ ] Add setting to enable/disable gallery grouping
-- [ ] Determine grouping strategy (closest common ancestor, or explicit container selector)
-- [ ] Add GLightbox gallery name attribute to grouped anchors
+- [x] Group lightbox images per container (e.g. per table) for swipe navigation
+- [x] Add setting to enable/disable gallery grouping
+- [x] Configurable gallery container selectors (default: table, .wp-block-gallery)
+- [x] "Group Loose Images" option for images not inside any gallery container
+- [x] Add GLightbox data-gallery attribute to grouped anchors
+- [x] apply_filters() hooks: ailm_gallery_grouping, ailm_gallery_containers, ailm_group_ungrouped
+
+### Milestone 10: Developer Filters (DONE)
+
+- [x] ailm_should_enqueue filter for per-page enable/disable
+- [x] ailm_css_selectors filter to override image selectors
+- [x] ailm_exclude_selectors filter to override exclude selectors
+- [x] ailm_hijack_image_links filter to override hijack behaviour
+- [x] ailm_skip_emoji and ailm_emoji_selectors filters
+- [x] ailm_script_data catch-all filter on full JS data array
+- [x] Developer Filters section in README.md with examples
 
 ---
 
@@ -109,6 +121,6 @@ None yet.
 
 - GLightbox 3.3.1 is bundled in `assets/vendor/glightbox/` (MIT licence).
 - Front-end JS is vanilla — no jQuery dependency.
-- Settings stored in wp_options: `ailm_css_selectors`, `ailm_page_types`, `ailm_hijack_image_links`, `ailm_skip_emoji`, `ailm_emoji_selectors`, `ailm_exclude_selectors`.
+- Settings stored in wp_options: `ailm_css_selectors`, `ailm_page_types`, `ailm_hijack_image_links`, `ailm_skip_emoji`, `ailm_emoji_selectors`, `ailm_exclude_selectors`, `ailm_gallery_grouping`, `ailm_gallery_containers`, `ailm_group_ungrouped`.
 - All options cleaned up by `uninstall.php` on plugin deletion.
 - Dev site: `http://bench3.local/`

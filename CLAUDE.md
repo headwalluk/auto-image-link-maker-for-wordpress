@@ -51,6 +51,10 @@ These are **mandatory** conventions — not suggestions:
 
 - **`pwpl/`** — if present, never modify. It's a sealed third-party licence controller.
 
+## Developer Filters
+
+When adding, removing, or changing any `apply_filters()` hook in the PHP code, **always update the "Developer Filters" section in README.md** to match. Each filter must be documented with its name, description, parameter types, and a usage example. Keep the filters in the same order as they appear in the code.
+
 ## Git Workflow
 
 Commit message format: `type: description` where type is one of `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`, `style:`, `test:`.

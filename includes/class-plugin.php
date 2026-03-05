@@ -98,9 +98,27 @@ class Plugin {
 	public function maybe_enqueue_script(): void {
 		$should_enqueue = $this->is_enabled_page_type();
 
+		/**
+		 * Filter whether the plugin should enqueue its front-end scripts on the current page.
+		 *
+		 * @since 0.6.0
+		 *
+		 * @param bool $should_enqueue Whether the plugin would normally enqueue (based on page type settings).
+		 */
+		$should_enqueue = (bool) apply_filters( 'ailm_should_enqueue', $should_enqueue );
+
 		if ( $should_enqueue ) {
 			$selectors_raw = get_option( OPT_CSS_SELECTORS, DEF_CSS_SELECTORS );
 			$selectors     = array_filter( array_map( 'trim', explode( "\n", $selectors_raw ) ) );
+
+			/**
+			 * Filter the CSS selectors used to find images.
+			 *
+			 * @since 0.6.0
+			 *
+			 * @param array<string> $selectors The image CSS selectors.
+			 */
+			$selectors = (array) apply_filters( 'ailm_css_selectors', $selectors );
 
 			wp_enqueue_style(
 				'glightbox',
@@ -128,31 +146,130 @@ class Plugin {
 			$exclude_raw       = get_option( OPT_EXCLUDE_SELECTORS, DEF_EXCLUDE_SELECTORS );
 			$exclude_selectors = array_filter( array_map( 'trim', explode( "\n", $exclude_raw ) ) );
 
+			/**
+			 * Filter the CSS selectors used to exclude images from processing.
+			 *
+			 * @since 0.6.0
+			 *
+			 * @param array<string> $exclude_selectors The exclude CSS selectors.
+			 */
+			$exclude_selectors = (array) apply_filters( 'ailm_exclude_selectors', $exclude_selectors );
+
 			$hijack_image_links = (bool) filter_var(
 				get_option( OPT_HIJACK_IMAGE_LINKS, DEF_HIJACK_IMAGE_LINKS ),
 				FILTER_VALIDATE_BOOLEAN
 			);
 
-			$skip_emoji      = (bool) filter_var(
+			/**
+			 * Filter whether existing image links should be hijacked to open in the lightbox.
+			 *
+			 * @since 0.6.0
+			 *
+			 * @param bool $hijack_image_links Whether to hijack existing image links.
+			 */
+			$hijack_image_links = (bool) apply_filters( 'ailm_hijack_image_links', $hijack_image_links );
+
+			$skip_emoji = (bool) filter_var(
 				get_option( OPT_SKIP_EMOJI, DEF_SKIP_EMOJI ),
 				FILTER_VALIDATE_BOOLEAN
 			);
+
+			/**
+			 * Filter whether emoji images should be skipped.
+			 *
+			 * @since 0.6.0
+			 *
+			 * @param bool $skip_emoji Whether to skip emoji images.
+			 */
+			$skip_emoji = (bool) apply_filters( 'ailm_skip_emoji', $skip_emoji );
+
 			$emoji_selectors = array();
 			if ( $skip_emoji ) {
 				$emoji_raw       = get_option( OPT_EMOJI_SELECTORS, DEF_EMOJI_SELECTORS );
 				$emoji_selectors = array_filter( array_map( 'trim', explode( "\n", $emoji_raw ) ) );
+
+				/**
+				 * Filter the CSS selectors used to identify emoji images.
+				 *
+				 * @since 0.6.0
+				 *
+				 * @param array<string> $emoji_selectors The emoji CSS selectors.
+				 */
+				$emoji_selectors = (array) apply_filters( 'ailm_emoji_selectors', $emoji_selectors );
 			}
+
+			$gallery_grouping = (bool) filter_var(
+				get_option( OPT_GALLERY_GROUPING, DEF_GALLERY_GROUPING ),
+				FILTER_VALIDATE_BOOLEAN
+			);
+
+			/**
+			 * Filter whether gallery grouping is enabled.
+			 *
+			 * @since 0.6.0
+			 *
+			 * @param bool $gallery_grouping Whether to group images into separate galleries.
+			 */
+			$gallery_grouping = (bool) apply_filters( 'ailm_gallery_grouping', $gallery_grouping );
+
+			$gallery_containers = array();
+			$group_ungrouped    = true;
+			if ( $gallery_grouping ) {
+				$containers_raw     = get_option( OPT_GALLERY_CONTAINERS, DEF_GALLERY_CONTAINERS );
+				$gallery_containers = array_filter( array_map( 'trim', explode( "\n", $containers_raw ) ) );
+
+				/**
+				 * Filter the CSS selectors used to define gallery container boundaries.
+				 *
+				 * @since 0.6.0
+				 *
+				 * @param array<string> $gallery_containers The gallery container CSS selectors.
+				 */
+				$gallery_containers = (array) apply_filters( 'ailm_gallery_containers', $gallery_containers );
+
+				$group_ungrouped = (bool) filter_var(
+					get_option( OPT_GROUP_UNGROUPED, DEF_GROUP_UNGROUPED ),
+					FILTER_VALIDATE_BOOLEAN
+				);
+
+				/**
+				 * Filter whether loose images (not inside any gallery container) are grouped together.
+				 *
+				 * @since 0.6.0
+				 *
+				 * @param bool $group_ungrouped Whether to group ungrouped images into a shared gallery.
+				 */
+				$group_ungrouped = (bool) apply_filters( 'ailm_group_ungrouped', $group_ungrouped );
+			}
+
+			$script_data = array(
+				'selectors'         => $selectors,
+				'excludeSelectors'  => $exclude_selectors,
+				'hijackImageLinks'  => $hijack_image_links,
+				'skipEmoji'         => $skip_emoji,
+				'emojiSelectors'    => $emoji_selectors,
+				'galleryGrouping'   => $gallery_grouping,
+				'galleryContainers' => $gallery_containers,
+				'groupUngrouped'    => $group_ungrouped,
+			);
+
+			/**
+			 * Filter the full data array passed to the front-end script.
+			 *
+			 * This is a catch-all filter applied after all individual filters. It allows
+			 * developers to modify any value passed to the JavaScript, including adding
+			 * custom keys for use in their own scripts.
+			 *
+			 * @since 0.6.0
+			 *
+			 * @param array<string, mixed> $script_data The localised script data.
+			 */
+			$script_data = (array) apply_filters( 'ailm_script_data', $script_data );
 
 			wp_localize_script(
 				'ailm-front',
 				'ailmData',
-				array(
-					'selectors'        => $selectors,
-					'excludeSelectors' => $exclude_selectors,
-					'hijackImageLinks' => $hijack_image_links,
-					'skipEmoji'        => $skip_emoji,
-					'emojiSelectors'   => $emoji_selectors,
-				)
+				$script_data
 			);
 		}
 	}

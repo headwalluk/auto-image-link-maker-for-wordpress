@@ -158,6 +158,67 @@ class Settings {
 			)
 		);
 
+		register_setting(
+			$this->option_group,
+			OPT_GALLERY_GROUPING,
+			array(
+				'type'              => 'boolean',
+				'sanitize_callback' => array( $this, 'sanitize_boolean' ),
+				'default'           => DEF_GALLERY_GROUPING,
+			)
+		);
+
+		register_setting(
+			$this->option_group,
+			OPT_GALLERY_CONTAINERS,
+			array(
+				'type'              => 'string',
+				'sanitize_callback' => array( $this, 'sanitize_css_selectors' ),
+				'default'           => DEF_GALLERY_CONTAINERS,
+			)
+		);
+
+		register_setting(
+			$this->option_group,
+			OPT_GROUP_UNGROUPED,
+			array(
+				'type'              => 'boolean',
+				'sanitize_callback' => array( $this, 'sanitize_boolean' ),
+				'default'           => DEF_GROUP_UNGROUPED,
+			)
+		);
+
+		add_settings_section(
+			'ailm_gallery_section',
+			__( 'Gallery Grouping', 'auto-image-link-maker' ),
+			array( $this, 'render_gallery_section' ),
+			$this->page_slug
+		);
+
+		add_settings_field(
+			'ailm_gallery_grouping_field',
+			__( 'Enable Grouping', 'auto-image-link-maker' ),
+			array( $this, 'render_gallery_grouping_field' ),
+			$this->page_slug,
+			'ailm_gallery_section'
+		);
+
+		add_settings_field(
+			'ailm_gallery_containers_field',
+			__( 'Gallery Containers', 'auto-image-link-maker' ),
+			array( $this, 'render_gallery_containers_field' ),
+			$this->page_slug,
+			'ailm_gallery_section'
+		);
+
+		add_settings_field(
+			'ailm_group_ungrouped_field',
+			__( 'Group Loose Images', 'auto-image-link-maker' ),
+			array( $this, 'render_group_ungrouped_field' ),
+			$this->page_slug,
+			'ailm_gallery_section'
+		);
+
 		add_settings_section(
 			'ailm_emoji_section',
 			__( 'Emoji Exclusions', 'auto-image-link-maker' ),
@@ -292,6 +353,96 @@ class Settings {
 	 * @return bool Sanitized boolean value.
 	 */
 	public function sanitize_hijack_image_links( mixed $input ): bool {
+		return (bool) filter_var( $input, FILTER_VALIDATE_BOOLEAN );
+	}
+
+	/**
+	 * Render the gallery grouping section description.
+	 *
+	 * @since 0.6.0
+	 *
+	 * @return void
+	 */
+	public function render_gallery_section(): void {
+		printf(
+			'<p>%s</p>',
+			esc_html__( 'Group lightbox images by their container so that clicking an image in a table lets you swipe through that table\'s images only.', 'auto-image-link-maker' )
+		);
+	}
+
+	/**
+	 * Render the gallery grouping checkbox field.
+	 *
+	 * @since 0.6.0
+	 *
+	 * @return void
+	 */
+	public function render_gallery_grouping_field(): void {
+		$value = (bool) filter_var(
+			get_option( OPT_GALLERY_GROUPING, DEF_GALLERY_GROUPING ),
+			FILTER_VALIDATE_BOOLEAN
+		);
+
+		printf(
+			'<label><input type="checkbox" name="%s" value="1" %s /> %s</label><p class="description">%s</p>',
+			esc_attr( OPT_GALLERY_GROUPING ),
+			checked( $value, true, false ),
+			esc_html__( 'Group images into separate galleries by container', 'auto-image-link-maker' ),
+			esc_html__( 'When disabled, all images on the page share a single lightbox. When enabled, images are grouped by their nearest gallery container.', 'auto-image-link-maker' )
+		);
+	}
+
+	/**
+	 * Render the gallery containers textarea field.
+	 *
+	 * @since 0.6.0
+	 *
+	 * @return void
+	 */
+	public function render_gallery_containers_field(): void {
+		$value = get_option( OPT_GALLERY_CONTAINERS, DEF_GALLERY_CONTAINERS );
+
+		printf(
+			'<textarea name="%s" id="%s" rows="4" cols="50" class="large-text code">%s</textarea><p class="description">%s</p>',
+			esc_attr( OPT_GALLERY_CONTAINERS ),
+			esc_attr( OPT_GALLERY_CONTAINERS ),
+			esc_textarea( $value ),
+			esc_html__( 'CSS selectors for elements that define gallery boundaries. One selector per line. Images inside the same container form a swipeable gallery.', 'auto-image-link-maker' )
+		);
+	}
+
+	/**
+	 * Render the group ungrouped images checkbox field.
+	 *
+	 * @since 0.6.0
+	 *
+	 * @return void
+	 */
+	public function render_group_ungrouped_field(): void {
+		$value = (bool) filter_var(
+			get_option( OPT_GROUP_UNGROUPED, DEF_GROUP_UNGROUPED ),
+			FILTER_VALIDATE_BOOLEAN
+		);
+
+		printf(
+			'<label><input type="checkbox" name="%s" value="1" %s /> %s</label><p class="description">%s</p>',
+			esc_attr( OPT_GROUP_UNGROUPED ),
+			checked( $value, true, false ),
+			esc_html__( 'Group loose images together', 'auto-image-link-maker' ),
+			esc_html__( 'When enabled, images that are not inside any gallery container are grouped into a shared lightbox. When disabled, each loose image opens individually.', 'auto-image-link-maker' )
+		);
+	}
+
+	/**
+	 * Sanitize a boolean checkbox input.
+	 *
+	 * @since 0.6.0
+	 *
+	 * @param mixed $input Raw input from the form.
+	 *
+	 * @return bool Sanitized boolean value.
+	 */
+	public function sanitize_boolean( mixed $input ): bool {
 		return (bool) filter_var( $input, FILTER_VALIDATE_BOOLEAN );
 	}
 

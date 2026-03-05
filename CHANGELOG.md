@@ -2,6 +2,15 @@
 
 All notable changes to Auto Image Link Maker will be documented in this file.
 
+## [0.6.0] - 2026-03-05
+
+### Added
+
+- Gallery grouping: images inside the same container (e.g. `<table>`, `.wp-block-gallery`) form a separate swipeable lightbox gallery.
+- New settings section "Gallery Grouping" with three controls: Enable Grouping (off by default), Gallery Containers (textarea), Group Loose Images (on by default).
+- Developer `apply_filters()` hooks for per-page overrides: `ailm_should_enqueue`, `ailm_css_selectors`, `ailm_exclude_selectors`, `ailm_hijack_image_links`, `ailm_skip_emoji`, `ailm_emoji_selectors`, `ailm_gallery_grouping`, `ailm_gallery_containers`, `ailm_group_ungrouped`, `ailm_script_data`.
+- Developer Filters documentation section in README.md with usage examples.
+
 ## [0.5.0] - 2026-03-05
 
 ### Added
