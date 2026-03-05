@@ -1,0 +1,64 @@
+# Copyright (C) 2026 headwalluk
+# This file is distributed under the same license as the Auto Image Link Maker plugin.
+msgid ""
+msgstr ""
+"Language: el_GR\n"
+"Project-Id-Version: Auto Image Link Maker 0.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-link-maker\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-05T09:41:59+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: auto-image-link-maker\n"
+
+#. Plugin Name of the plugin
+#: auto-image-link-maker.php
+#: includes/class-settings.php:54
+msgid "Auto Image Link Maker"
+msgstr "Αυτόματο πρόγραμμα δημιουργίας συνδέσμων εικόνων"
+
+#. Description of the plugin
+#: auto-image-link-maker.php
+msgid "Automatically wraps unwrapped images in clickable anchor links."
+msgstr "Τυλίγει αυτόματα τις μη τυλιγμένες εικόνες σε κλικάσιμους συνδέσμους αγκύρωσης."
+
+#. Author of the plugin
+#: auto-image-link-maker.php
+msgid "headwalluk"
+msgstr "headwalluk"
+
+#: includes/class-settings.php:55
+msgid "Image Link Maker"
+msgstr "Δημιουργία συνδέσμου εικόνας"
+
+#: includes/class-settings.php:92
+msgid "CSS Selectors"
+msgstr "Επιλογείς CSS"
+
+#: includes/class-settings.php:99
+msgid "Image Selectors"
+msgstr "Επιλογείς εικόνων"
+
+#: includes/class-settings.php:107
+msgid "Page Types"
+msgstr "Τύποι σελίδων"
+
+#: includes/class-settings.php:114
+msgid "Enable on"
+msgstr "Ενεργοποίηση"
+
+#: includes/class-settings.php:142
+msgid "Enter CSS selectors to identify images that should be made clickable. One selector per line."
+msgstr "Εισάγετε επιλογείς CSS για να προσδιορίσετε τις εικόνες που πρέπει να γίνουν κλικάbel. Ένας επιλογέας ανά γραμμή."
+
+#: includes/class-settings.php:161
+msgid "Example: #main img, .entry-content img, .wp-block-table img"
+msgstr "Παράδειγμα: #main img, .entry-content img, .wp-block-table img"
+
+#: includes/class-settings.php:175
+msgid "Choose which types of pages the plugin should run on."
+msgstr "Επιλέξτε τους τύπους σελίδων στις οποίες θα εκτελείται το πρόσθετο."

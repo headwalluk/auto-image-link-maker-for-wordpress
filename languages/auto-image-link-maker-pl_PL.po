@@ -1,0 +1,64 @@
+# Copyright (C) 2026 headwalluk
+# This file is distributed under the same license as the Auto Image Link Maker plugin.
+msgid ""
+msgstr ""
+"Language: pl_PL\n"
+"Project-Id-Version: Auto Image Link Maker 0.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/auto-image-link-maker\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-05T09:41:59+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: auto-image-link-maker\n"
+
+#. Plugin Name of the plugin
+#: auto-image-link-maker.php
+#: includes/class-settings.php:54
+msgid "Auto Image Link Maker"
+msgstr "Automatyczny generator linków do obrazów"
+
+#. Description of the plugin
+#: auto-image-link-maker.php
+msgid "Automatically wraps unwrapped images in clickable anchor links."
+msgstr "Automatycznie otacza nieopakowane obrazy klikalnymi linkami kotwicowymi."
+
+#. Author of the plugin
+#: auto-image-link-maker.php
+msgid "headwalluk"
+msgstr "headwalluk"
+
+#: includes/class-settings.php:55
+msgid "Image Link Maker"
+msgstr "Kreator linków do obrazów"
+
+#: includes/class-settings.php:92
+msgid "CSS Selectors"
+msgstr "Selektory CSS"
+
+#: includes/class-settings.php:99
+msgid "Image Selectors"
+msgstr "Selektory obrazów"
+
+#: includes/class-settings.php:107
+msgid "Page Types"
+msgstr "Typy stron"
+
+#: includes/class-settings.php:114
+msgid "Enable on"
+msgstr "Włącz"
+
+#: includes/class-settings.php:142
+msgid "Enter CSS selectors to identify images that should be made clickable. One selector per line."
+msgstr "Wprowadź selektory CSS, aby zidentyfikować obrazy, które powinny być klikalne. Jeden selektor w każdym wierszu."
+
+#: includes/class-settings.php:161
+msgid "Example: #main img, .entry-content img, .wp-block-table img"
+msgstr "Przykład: #main img, .entry-content img, .wp-block-table img"
+
+#: includes/class-settings.php:175
+msgid "Choose which types of pages the plugin should run on."
+msgstr "Wybierz typy stron, na których ma działać wtyczka."
