@@ -1,5 +1,11 @@
 # Auto Image Link Maker
 
+![Version](https://img.shields.io/badge/version-0.3.0-blue)
+![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759b?logo=wordpress)
+![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4?logo=php&logoColor=white)
+![License](https://img.shields.io/badge/license-GPLv2-green)
+![GLightbox](https://img.shields.io/badge/GLightbox-3.3.1-orange)
+
 A WordPress plugin that automatically wraps unwrapped images in clickable anchor links, with a built-in lightbox for smooth viewing.
 
 ## Problem

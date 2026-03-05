@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Auto Image Link Maker
  * Description: Automatically wraps unwrapped images in clickable anchor links.
- * Version:     0.2.0
+ * Version:     0.3.0
  * Author:      headwalluk
  * Text Domain: auto-image-link-maker
  * Requires PHP: 7.4
@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) || die();
 
 define( 'AILM_NAME', 'Auto Image Link Maker' );
-define( 'AILM_VERSION', '0.2.0' );
+define( 'AILM_VERSION', '0.3.0' );
 define( 'AILM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AILM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

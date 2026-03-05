@@ -2,6 +2,14 @@
 
 All notable changes to Auto Image Link Maker will be documented in this file.
 
+## [0.3.0] - 2026-03-05
+
+### Added
+
+- Text domain loading for translation support.
+- Machine-translated language files (de_DE, el_GR, en_GB, es_ES, fr_FR, it_IT, nl_NL, pl_PL).
+- README badges (version, WordPress, PHP, licence, GLightbox).
+
 ## [0.2.0] - 2026-03-05
 
 ### Added

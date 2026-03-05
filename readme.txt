@@ -4,7 +4,7 @@ Tags: images, lightbox, links, tables, accessibility
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,11 @@ No. The plugin works entirely in the browser. Your saved content is never change
 The plugin bundles GLightbox 3.3.1 (MIT licence), a lightweight, dependency-free lightbox library.
 
 == Changelog ==
+
+= 0.3.0 =
+* Add text domain loading for translations.
+* Add machine-translated language files (de, el, en_GB, es, fr, it, nl, pl).
+* Add README badges.
 
 = 0.2.0 =
 * Initial release.
